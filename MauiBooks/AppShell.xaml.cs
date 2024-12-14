@@ -1,4 +1,6 @@
-﻿namespace MauiBooks
+﻿using MauiBooks.Pages;
+
+namespace MauiBooks 
 {
     public partial class AppShell : Shell
     {
