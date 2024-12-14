@@ -1,26 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
+using System.ComponentModel.DataAnnotations;
+using ColumnAttribute = SQLite.ColumnAttribute;
+
 
 namespace MauiBooks.Models
 {
-    internal class Book
-    { 
-        public int Id { get; set; }
-        public string Title { get; set; } 
-        public string Description { get; set; } 
-        public string Author { get; set; } 
+    
+    public class Book
+    {
+        [PrimaryKey]
+        [Column("id")]
+        [Required]
+        public Guid Id { get; set; } = new Guid();
+
+        [Column("title")]
+        [Required]
+        public string Title { get; set; }
+
+        [Column("decription")]
+        [Required]
+        public string Description { get; set; }
+
+        [Column("author")]
+        [Required]
+        public string Author { get; set; }
+
+        [Column("img")]
+        [Required]
         public string ImgUrl { get; set; }  
 
-        public Book(int id, string title, string description, string author, string imgUrl) 
-        {
-            this.Id = id; 
-            this.Title = title; 
-            this.Description = description; 
-            this.Author = author;
-            this.ImgUrl = imgUrl;
-        }
+        //public Book(int id, string title, string description, string author, string imgUrl) 
+        //{
+        //    this.Id = id; 
+        //    this.Title = title; 
+        //    this.Description = description; 
+        //    this.Author = author;
+        //    this.ImgUrl = imgUrl;
+        //}
     }
 }

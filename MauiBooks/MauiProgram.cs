@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiBooks.Pages;
+using Microsoft.Extensions.Logging;
 
 namespace MauiBooks
 {
@@ -6,7 +7,8 @@ namespace MauiBooks
     {
         public static MauiApp CreateMauiApp()
         {
-            var builder = MauiApp.CreateBuilder();
+            var builder = MauiApp.CreateBuilder(); 
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -14,6 +16,10 @@ namespace MauiBooks
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddTransient<AddBook>();
+            builder.Services.AddTransient<Catalog>();
+            builder.Services.AddSingleton<LocalDbService>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
