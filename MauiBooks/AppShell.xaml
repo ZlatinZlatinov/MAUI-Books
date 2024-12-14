@@ -3,13 +3,19 @@
     x:Class="MauiBooks.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiBooks"
-    Shell.FlyoutBehavior="Flyout"
+    xmlns:local="clr-namespace:MauiBooks.Pages"
     Title="MauiBooks">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+    
+    <ShellContent 
+        Title="Test"
+        ContentTemplate="{DataTemplate local:TestPage}"
+        Route="Test"/>
 
+    <ShellContent 
+        Title="Add Book"
+        ContentTemplate="{DataTemplate local:AddBook}"
+        Route="AddBook"/>
+    </TabBar>
 </Shell>
