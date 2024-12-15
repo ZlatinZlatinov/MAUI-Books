@@ -17,8 +17,8 @@ namespace MauiBooks
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddTransient<AddBook>();
-            builder.Services.AddTransient<Catalog>();
+            //builder.Services.AddTransient<AddBook>();
+            //builder.Services.AddTransient<Catalog>();
             builder.Services.AddSingleton<LocalDbService>();
 
 #if DEBUG
